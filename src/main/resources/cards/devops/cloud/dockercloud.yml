@@ -1,0 +1,9 @@
+self:
+  title: You need to learn Docker Cloud...
+  description: Docker Cloud manages multi container applications and host resources running on a cloud provider(such as Amazon Web Services).
+condition:
+  cards:
+    - docker
+experience: 3
+satisfaction: 3
+money: -6

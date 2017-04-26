@@ -1,0 +1,8 @@
+self:
+  title: You need to learn jsf...
+  description: bla bla bla
+condition:
+  cards:
+    - java
+experience: 3
+satisfaction: 2

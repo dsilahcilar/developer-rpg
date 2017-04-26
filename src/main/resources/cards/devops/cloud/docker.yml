@@ -1,0 +1,6 @@
+self:
+  title: You need to learn Docker...
+  description: Docker is an open source project that automates the deployment of applications inside software containers.
+experience: 6
+satisfaction: 5
+money: -10

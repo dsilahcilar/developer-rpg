@@ -1,0 +1,11 @@
+self:
+  title: You need to learn Bower...
+  description: Bower manages frameworks, libraries, assets, and utilities for you.
+condition:
+  cards:
+    - html
+    - css
+    - javascript
+experience: 4
+satisfaction: 4
+money: -7

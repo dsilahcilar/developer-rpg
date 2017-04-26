@@ -1,0 +1,11 @@
+self:
+  title: You need to learn AngularJS...
+  description: AngularJS is a JavaScript based open source frontEnd web application framework
+condition:
+  cards:
+    - html
+    - css
+    - javascript
+experience: 6
+satisfaction: 5
+money: -10

@@ -1,0 +1,11 @@
+self:
+  title: You need to learn BackboneJS...
+  description: BackboneJS gives structure to web applications by providing models, collections, views and connects it all to your existing API over a RESTful JSON interface.
+condition:
+  cards:
+    - html
+    - css
+    - javascript
+experience: 5
+satisfaction: 4
+money: -10

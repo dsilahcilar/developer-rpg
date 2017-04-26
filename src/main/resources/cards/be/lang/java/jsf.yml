@@ -1,0 +1,9 @@
+self:
+  title: You need to learn Jsf...
+  description: Jsf is a Java specification for building component based user interfaces for web applications.
+condition:
+  cards:
+    - java
+experience: 3
+satisfaction: 2
+money: -5

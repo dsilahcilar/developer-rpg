@@ -1,0 +1,10 @@
+self:
+  title: You need to learn Spring...
+  description: Spring is an application framework and inversion of control container for the Java platform.
+condition:
+  cards:
+    - java
+experience: 3
+satisfaction: 2
+money: -5
+

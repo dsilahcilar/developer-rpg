@@ -1,0 +1,8 @@
+self:
+  title: You need to learn spring...
+  description: spring
+condition:
+  cards:
+    - java
+experience: 3
+satisfaction: 2
