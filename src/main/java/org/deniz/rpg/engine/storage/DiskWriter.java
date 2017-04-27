@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class DiskWriter implements Listener {
     private static DiskWriter self;
+    private StorageConverter storageConverter = new StorageConverter();
 
     private DiskWriter() {
 
@@ -25,26 +25,14 @@ public class DiskWriter implements Listener {
     }
 
     private void writeToDisk(Map<Integer, Integer> integerInputs, Map<Integer, String> stringInputs) {
-        List<String> inputs = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry<Integer, Integer> eachEntry : integerInputs.entrySet()) {
-            sb.append(eachEntry.getKey())
-                    .append(":")
-                    .append(eachEntry.getValue())
-                    .append(",");
-        }
-        inputs.add(sb.toString());
-        sb = new StringBuilder();
-        for (Map.Entry<Integer, String> eachEntry : stringInputs.entrySet()) {
-            sb.append(eachEntry.getKey())
-                    .append(":")
-                    .append(eachEntry.getValue())
-                    .append(",");
-        }
-        inputs.add(sb.toString());
+        List<String> inputs = storageConverter.toList(integerInputs, stringInputs);
         try {
-            URL path = getClass().getClassLoader().getResource(StorageEnum.STORAGE_PATH.getName());
-            Files.write(Paths.get(path.getPath()), inputs);
+            String storagePath = System.getenv("STORAGE_PATH");
+            if (storagePath == null) {
+                URL path = getClass().getClassLoader().getResource(StorageEnum.STORAGE_PATH.getName());
+                storagePath = path.getPath();
+            }
+            Files.write(Paths.get(storagePath), inputs);
         } catch (IOException e) {
             e.printStackTrace();
         }
