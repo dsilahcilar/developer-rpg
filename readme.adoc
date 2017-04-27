@@ -12,6 +12,5 @@
 *** Read the known issues
 *** Run with any IDE : Just run Application.java main method 
 
-
-* Known issues
-- Run as standalone java app (java -jar) could not read property files under the /src/main/resources
+** Known issues
+*** Run as standalone java app (java -jar) could not read property files under the /src/main/resources
