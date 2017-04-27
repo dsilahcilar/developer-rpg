@@ -1,0 +1,17 @@
+= Developer Rpg
+
+* How to run:
+** Run with Docker:
+....
+ docker build -t rpg-game:1.0 .
+ docker run -it rpg-game:1.0
+....
+
+
+** Run as Java app:
+*** Read the known issues
+*** Run with any IDE : Just run Application.java main method 
+
+
+* Known issues
+- Run as standalone java app (java -jar) could not read property files under the /src/main/resources

@@ -31,7 +31,11 @@ public class GameLoop {
 
     public void run() {
         PageGenerator pageGenerator = new PageGenerator();
-        Page page = pageGenerator.buildTree(getClass().getClassLoader().getResource("cards").getPath());
+        String rootPath = System.getenv("CAR_DIR");
+        if(rootPath == null) {
+            rootPath = getClass().getClassLoader().getResource("cards").getPath();
+        }
+        Page page = pageGenerator.buildTree(rootPath);
         playerService.createPlayer();
         loop(page);
     }

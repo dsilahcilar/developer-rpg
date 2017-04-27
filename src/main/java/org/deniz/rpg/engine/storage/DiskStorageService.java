@@ -57,9 +57,13 @@ public class DiskStorageService implements StorageService {
     private List<String> getState() {
         if (state == null) {
             state = new ArrayList<>();
-            URL path = getClass().getClassLoader().getResource(StorageEnum.STORAGE_PATH.getName());
+            String storagePath = System.getenv("STORAGE_PATH");
+            if(storagePath == null) {
+                URL path = getClass().getClassLoader().getResource(StorageEnum.STORAGE_PATH.getName());
+                storagePath = path.getPath();
+            }
             try {
-                state = Files.readAllLines(Paths.get(path.getPath()));
+                state = Files.readAllLines(Paths.get(storagePath));
             } catch (IOException e) {
                 e.printStackTrace();
             }

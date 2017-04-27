@@ -9,7 +9,10 @@ public class RuleValidator {
     private FileHelper fileHelper = new FileHelper();
 
     public void checkSelfFiles() {
-        String rootPath = getClass().getClassLoader().getResource("cards").getPath();
+        String rootPath = System.getenv("CAR_DIR");
+        if(rootPath == null) {
+            rootPath = getClass().getClassLoader().getResource("cards").getPath();
+        }
         check(rootPath);
     }
 
